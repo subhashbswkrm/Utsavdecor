@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Utsav Decor | Decorations</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/vendor.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="preloader-wrapper"><div class="preloader"></div></div>
+  <header class="border-bottom">
+    <div class="container-fluid py-3 d-flex align-items-center justify-content-between flex-wrap gap-3">
+      <a class="main-logo" href="index.html"><img src="images/logo.png" alt="Utsav Decor" class="img-fluid"></a>
+      <nav class="d-flex gap-2 flex-wrap">
+        <a class="btn btn-outline-light site-nav-link" href="index.html">Home</a>
+        <a class="btn btn-outline-light site-nav-link" href="products.html">Decorations</a>
+        <a class="btn btn-outline-light site-nav-link" href="booking.html">Booking</a>
+        <a class="btn btn-outline-light site-nav-link" href="about.html">About</a>
+        <a class="btn btn-outline-light site-nav-link" href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="py-5">
+    <div class="container-fluid">
+      <h1 class="mb-4">Decoration Packages</h1>
+      <div class="festival-filters mb-4 p-4 rounded-4">
+        <div class="row g-3">
+          <div class="col-md-3"><label class="form-label">Price</label><select id="priceFilter" class="form-select"><option value="all">All</option><option value="999-5000">₹999-₹5,000</option><option value="5001-15000">₹5,001-₹15,000</option><option value="15001-30000">₹15,001-₹30,000</option><option value="30001-999999">₹30,001-₹50,000+</option></select></div>
+          <div class="col-md-3"><label class="form-label">Rating</label><select id="ratingFilter" class="form-select"><option value="0">All</option><option value="4">4.0+</option><option value="4.3">4.3+</option><option value="4.5">4.5+</option><option value="4.8">4.8+</option></select></div>
+          <div class="col-md-3"><label class="form-label">Event Type</label><select id="eventFilter" class="form-select"><option value="all">All</option><option value="Puja Decorations">Puja Decorations</option><option value="Wedding Stage Decoration">Wedding Stage Decoration</option><option value="Birthday Decoration">Birthday Decoration</option><option value="Festive Lighting">Festive Lighting</option><option value="Floral Decoration">Floral Decoration</option></select></div>
+          <div class="col-md-3"><label class="form-label">Sort</label><select id="sortFilter" class="form-select"><option value="best">Best Selling</option><option value="top">Top Rated</option><option value="new">Newest</option></select></div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-between align-items-center mb-3"><p id="productsStats" class="mb-0 fw-semibold"></p><span class="badge bg-dark-subtle text-dark">1000+ Listings</span></div>
+      <div class="row g-3" id="productsGrid"></div>
+      <div class="text-center mt-4"><button id="loadMoreBtn" class="btn btn-primary">Load More</button></div>
+    </div>
+  </section>
+
+  <footer class="py-5">
+    <div class="container-fluid"><div class="row g-4"><div class="col-lg-4"><h5>Utsav Decor</h5><p>+91 98034 984089 | info@utsavdecor.in</p></div><div class="col-lg-4"><h5>Quick Links</h5><a class="d-block" href="index.html">Home</a><a class="d-block" href="products.html">Services</a><a class="d-block" href="contact.html">Contact</a></div><div class="col-lg-4"><h5>Social</h5><a class="d-block" href="#">Instagram</a><a class="d-block" href="#">Facebook</a><a class="d-block" href="#">YouTube</a></div></div></div>
+  </footer>
+
+  <script src="js/jquery-1.11.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script>window.__APP_CONFIG={apiBaseUrl:"http://localhost:5000/api"};</script>
+  <script src="js/script.js"></script>
+</body>
+</html>

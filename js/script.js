@@ -1,7 +1,7 @@
  (function ($) {
   "use strict";
 
-  var API_BASE = window.__APP_CONFIG && window.__APP_CONFIG.apiBaseUrl ? window.__APP_CONFIG.apiBaseUrl : "http://localhost:5000/api";
+  var API_BASE = window.__APP_CONFIG && window.__APP_CONFIG.apiBaseUrl ? window.__APP_CONFIG.apiBaseUrl : "/api";
   var pageName = (window.location.pathname.split("/").pop() || "index.html").toLowerCase();
   var state = {
     allProducts: [],

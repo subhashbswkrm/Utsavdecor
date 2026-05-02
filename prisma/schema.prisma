@@ -1,0 +1,91 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Category {
+  PujaDecorations
+  WeddingStageDecoration
+  BirthdayDecoration
+  FestiveLighting
+  FloralDecoration
+}
+
+enum Popularity {
+  high
+  medium
+  new
+}
+
+enum Status {
+  pending
+  confirmed
+  completed
+  cancelled
+}
+
+enum PaymentProvider {
+  none
+  razorpay
+  stripe
+}
+
+model Product {
+  id            String   @id @default(cuid())
+  title         String
+  category      Category
+  eventType     String
+  description   String
+  priceMin      Int      @default(999)
+  priceMax      Int      @default(1000)
+  rating        Float    @default(4.0)
+  popularity    Popularity @default(medium)
+  totalBookings Int      @default(0)
+  isBestSelling Boolean  @default(false)
+  imageUrl      String   @default("")
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  bookings Booking[]
+
+  @@map("products")
+}
+
+model Booking {
+  id             String          @id @default(cuid())
+  name           String
+  phone          String
+  address        String
+  eventType      String
+  eventDate      DateTime
+  productId      String?
+  status         Status          @default(pending)
+  advanceAmount  Float           @default(0)
+  paymentProvider PaymentProvider @default(none)
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+
+  product Product? @relation(fields: [productId], references: [id])
+
+  @@map("bookings")
+}
+
+model Review {
+  id         String   @id @default(cuid())
+  name       String
+  rating     Int
+  reviewText String
+  eventType  String   @default("")
+  isFeatured Boolean  @default(true)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@map("reviews")
+}

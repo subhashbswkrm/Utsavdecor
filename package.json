@@ -1,0 +1,26 @@
+{
+  "name": "utsav-decor",
+  "version": "1.0.0",
+  "description": "Utsav Decor eCommerce platform",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'No build step required'",
+    "start": "vercel dev",
+    "db:generate": "prisma generate",
+    "db:push": "prisma db push"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.22.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "pg": "^8.13.0",
+    "razorpay": "^2.9.4"
+  },
+  "devDependencies": {
+    "prisma": "^5.22.0",
+    "vercel": "^37.10.0"
+  }
+}

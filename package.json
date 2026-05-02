@@ -5,9 +5,9 @@
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
-    "dev": "vercel dev",
-    "build": "echo 'No build step required'",
-    "start": "vercel dev",
+    "dev": "node index.js",
+    "build": "prisma generate",
+    "start": "node index.js",
     "db:generate": "prisma generate",
     "db:push": "prisma db push"
   },
@@ -20,7 +20,6 @@
     "razorpay": "^2.9.4"
   },
   "devDependencies": {
-    "prisma": "^5.22.0",
-    "vercel": "^37.10.0"
+    "prisma": "^5.22.0"
   }
 }
